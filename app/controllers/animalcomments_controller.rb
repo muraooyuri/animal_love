@@ -1,0 +1,2 @@
+class AnimalcommentsController < ApplicationController
+end

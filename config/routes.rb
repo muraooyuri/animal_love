@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+  
+  resources :animals, only: [:new, :index, :show,:edit] do
+    resources :touken_comments, only: [:create, :destroy]
+  end
   get 'users/index'
   get 'users/show'
   get 'users/edit'
-  get 'animals/new'
-  get 'animals/index'
-  get 'animals/show'
-  get 'animals/edit'
+  # get 'animals/new'
+  # get 'animals/index'
+  # get 'animals/show'
+  # get 'animals/edit'
   root to: 'homus#top'
   devise_for :users
   devise_scope :user do

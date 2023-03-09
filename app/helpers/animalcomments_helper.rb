@@ -1,0 +1,2 @@
+module AnimalcommentsHelper
+end
