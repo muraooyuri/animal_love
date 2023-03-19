@@ -1,4 +1,5 @@
 class AnimalCommentsController < ApplicationController
+  
   before_action :authenticate_user!
   
   def create
@@ -11,14 +12,16 @@ class AnimalCommentsController < ApplicationController
 
   def destroy
     @animal = Animal.find(params[:animal_id])
-    @animal_comment=AnimalComment.find_by(id: params[:id], animal_id: params[:animal_id])
+    @animal_comment = AnimalComment.find_by(id: params[:id], animal_id: params[:animal_id])
     @animal_comment.destroy
     redirect_to animal_path(@animal)
   end
 
+
+
   private
 
-  def animal_comment_params
-     params.require(:animal_comment).permit(:comment)
-  end
+    def animal_comment_params
+      params.require(:animal_comment).permit(:comment)
+    end
 end
