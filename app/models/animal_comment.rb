@@ -1,0 +1,2 @@
+class AnimalComment < ApplicationRecord
+end
